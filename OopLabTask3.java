@@ -1,5 +1,4 @@
 package oop.lab.task.pkg3;‍
-//importing list and array list‍
 ‍
 import java.util.List;‍
 import java.util.ArrayList;‍
