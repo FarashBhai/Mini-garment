@@ -80,10 +80,23 @@ class Order {
         garments.add(garment);
     }
      double calculateTotalAmount() {
-        totalAmount = 0; // Reset totalAmount to avoid accumulation
+        totalAmount = 0;
         for (Garment g : garments) {
             totalAmount += g.price;
         }
         return totalAmount;
     }
+    
+      void printOrderDetails() {
+        System.out.println("--------------------------");
+        System.out.println("Order Details");
+        System.out.println("--------------------------");
+        for (Garment g : garments) {
+            System.out.println("Name: " + g.name);
+            System.out.println("Price: " + g.price);
+            System.out.println("Description: " + g.description);
+            System.out.println("--------------------------");
+        }
+    }
+}
 
