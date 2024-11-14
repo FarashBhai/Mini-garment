@@ -79,4 +79,11 @@ class Order {
     void addGarment(Garment garment) {
         garments.add(garment);
     }
+     double calculateTotalAmount() {
+        totalAmount = 0; // Reset totalAmount to avoid accumulation
+        for (Garment g : garments) {
+            totalAmount += g.price;
+        }
+        return totalAmount;
+    }
 
