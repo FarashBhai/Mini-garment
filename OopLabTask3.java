@@ -64,3 +64,19 @@ class Supplier {
     }
 }
 
+class Order {
+
+    public String orderId;
+    public Date orderDate;
+    public List<Garment> garments = new ArrayList<>();
+    private double totalAmount;
+
+    public Order(String orderId, Date orderDate) {
+        this.orderId = orderId;
+        this.orderDate = orderDate;
+    }
+
+    void addGarment(Garment garment) {
+        garments.add(garment);
+    }
+
