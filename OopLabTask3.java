@@ -141,5 +141,49 @@ class Inventory {
     }
 }
 
+public class OopLabTask3 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Inventory inventory = new Inventory();
+
+        Garment g1 = new Garment("G001", "T-Shirt", "Cotton T-Shirt", "M", "Blue", 20.0, 50);
+        Garment g2 = new Garment("G002", "Jeans", "Denim Jeans", "L", "Black", 40.0, 30);
+        inventory.addGarment(g1);
+        inventory.addGarment(g2);
+
+        System.out.println("Welcome to Garment Management System");
+        System.out.println("1. Calculate Discount Price");
+        System.out.println("2. Find Garment by ID");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter discount percentage: ");
+                double discountPercentage = scanner.nextDouble();
+                double discountedPrice = g1.calculateDiscountPrice(discountPercentage);
+                System.out.println("Discounted Price: " + discountedPrice);
+                break;
+            case 2:
+                System.out.print("Enter garment ID: ");
+                String garmentId = scanner.next();
+                Garment foundGarment = inventory.findGarment(garmentId);
+                if (foundGarment != null) {
+                    System.out.println("Garment Found:");
+                    System.out.println("Name: " + foundGarment.name);
+                    System.out.println("Price: " + foundGarment.price);
+                } else {
+                    System.out.println("Garment not found");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+        
+        scanner.close();
+    }
+}
+
 
 
